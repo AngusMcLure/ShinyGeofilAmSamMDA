@@ -1,0 +1,87 @@
+---
+title:  App Description 
+author:  AngusMcLure 
+date:  15/12/2021 
+output: html_document
+---
+
+# Overview
+
+This interactive visualisation tool accompanies a research article *Modelling lymphatic filariasis elimination in American Samoa: GEOFIL predicts need for new targets and six rounds of mass drug administration* published in *Epidemics*. The tool summarises the results of thousands of simulations of GEOFIL, an agent-based simulation model of lymphatic filariasis transmission in American Samoa^[1] . This tool can be used to investigate the outcomes of different model assumptions and mass drug administration scenarios on a wide range of measures of transmission and prevalence.
+
+The app is designed to be easy and intuitive to use. The side bar contains a number of drop-down menus allowing users to explore the database of simulations. The following sections describe in more detail what each of the options controls.
+
+*You can return to the visualisations by selecting any field from the drop-down menus in the left-hand panel.*
+
+## Model outputs
+
+These options controls which results are displayed in the two charts. You can only choose one per chart, but the choice can be different for each chart.
+
+`Mf Prevalence (All)`, `Mf Prevalence Fagali'i`, and`Mf Prevalence Ili'ili`, etc. are the mean across simulations of the prevalence of microfilariae in the blood of different subgroups of the American Samoan population. `Mf Prevalence (All)` is the prevalence in the whole model population (Tutuila and Aunu'u). `Mf Prevalence (6-7 year olds)` is the prevalence in six and seven year-old children, `Mf Prevalence (15+ year olds)` is the prevalence in people 15 and older. `Mf Prevalence Fagali'i` is the prevalence in the village of Fagali'i, which was identified as a hotspot in a 2010 survey (ref). `Mf Prevalence Ili'ili` is the prevalence in the contiguous villages of Ili'ili, Futiga, and Vaitogi which was also identified as potential hotspot in the same survey.
+
+`Prob Mf Prevalence < 1%`, `Prob Mf Prevalence < 0.5%`, `Prob Mf Prevalence < 0.1%`, `Prob Mf Prevalence < 0.01%`, and`Prob Mf Prevalence = 0%` are the proportion of simulations in each year in which the prevalence of microfilariae in the whole model population reached given thresholds. `Prob Ag Prevalence < 1%` etc are similar but using antigen rather than microfilariae.
+
+ `Ag Prevalence (All)` is the mean across simulations of the prevalence of antigenaemia in the whole model population. `Ag Prevalence (6-7 year olds)` is the same meaure restricted to six and seven-year old children. `Ratio Ag:Mf Prevalence (All)` is the median ratio of the prevalence of antigenaemia and microfilaraemia in the whole model population.
+
+## MDA Scenarios
+
+These options control which mass drug administration (MDA) scenarios are compared in the charts. The user can choose the drugs used in mass drug administration (**Drugs**),  the number of annual rounds of MDA (**Number of Rounds**), and the population coverage in each round of MDA (**Coverage**). Selecting more than one option from one (or more) of these fields displays a comparison of all the possible combination scenarios with the selected settings. When you consider only a single scenario (i.e. when you choose exactly one option from each field) prevalence measures will display 90% simulation intervals in addition to the simulation mean.
+
+*Note: You must choose at least one option from each field otherwise the chart areas will be blank.*
+
+### Coverage
+
+Drugs are only administered to eligible people, which excludes children under two and pregnant women. The coverage proportion is calculated across the whole model population, not just the eligible population. The options for coverage proportion are 55%, 65% and 75%.
+
+### Drugs
+
+Two drug combinations are considered: a two-drug treatment of diethylcarbamazine citrate and albendazole (DA) or a three-drug treatment of ivermectin, diethylcarbamazine citrate, and albendazole (IDA).  In `DA` scenarios, the two-drug treatment in administered to all people who receive drugs. In `IDA` scenarios, the three-drug treatment in administered to recipients five years or older, but the two-drug treatment is administered to children aged two, three, or four.
+
+### Number of Rounds
+
+Annual rounds of MDA start in 2018 and are assumed to be administered at the beginning of each year. As we simulate the measurement of prevalence immediately before the round of MDA, reductions in prevalence only begin to appear in the following year (2019). Users can choose between two and seven rounds of MDA.
+
+## Model assumptions
+
+A full description of model assumptions can be found in the research article. The tool allows users to compare the model outcomes across different sets of model assumptions for the effects of drugs (**Drug Efficacy Assumptions**).
+
+*Note: You must choose at least one option from each field otherwise the chart areas will be blank.*
+
+### Drug Efficacy Assumptions
+
+There are two possible sets of assumptions for how effective drugs are: high or low. The high efficacy assumptions are used throughout the paper and are the default for the tool, however you can change this option or compare the two by selecting both. 
+
+| Assumption  set | Drug regimen | Probability of immediate  worm death | Probability of complete  worm sterilisation | Probability of partial worm  sterilisation | Duration of sterilisation  (months) |
+| :-------------: | :----------: | :----------------------------------: | :-----------------------------------------: | :----------------------------------------: | :---------------------------------: |
+|      High       |     IDA      |                 55%                  |                     45%                     |                     0%                     |              Permanent              |
+|       Low       |     IDA      |                 50%                  |                     46%                     |                     4%                     |                 36                  |
+|      High       |      DA      |                 50%                  |                     33%                     |                    17%                     |                 12                  |
+|       Low       |      DA      |                 55%                  |                     0%                      |                     0%                     |                 NA                  |
+
+## Time-axis display options
+
+These options controls how model outputs are plotted against year (x-axis) in the two charts. You can only choose one per chart, but the choice can be different for each chart.
+
+There are two options for the time axis (x axis) of the figure:
+
+-  `Calendar Year` (default) plots model outputs against the calendar year.
+-  `Years since last MDA` plots model outputs against the number years that have elapsed since the final simulated round of MDA — i.e. 2019 for two round scenarios, 2020 for three scenarios, 2021 for four rounds scenarios etc. This is useful when comparing scenarios with different numbers of rounds of MDA.
+
+There is also an option to hide/display simulated results for years before the first round of MDA (selected by default). This options effects both plots simulataneously
+
+*Note: The first simulated round is in 2018. All simulated rounds are administered at the beginning of each year immediately after measurement of prevalence. Consequently, the lowest mean prevalence is often observed in the year after the last round of MDA.*
+
+## y-axis display options
+
+These options control the scale of the y-axis. There are three options:
+
+-  `Linear`
+-  `Log`
+
+All  kinds of model outputs are rendered on a linear scale by default. However, as prevalence can vary substantially over time and between different scenarios, the log scale may sometimes be better for plots of antigen or microfilaria prevalence.The main disadvantage of the log scale is that 0% prevalence cannot be visualised sensibly, leading to unexpected results for some combinations of inputs.
+
+
+
+#  References
+
+1 -- Xu Z, Graves PM, Lau CL, Clements A, Geard N, Glass K. GEOFIL: A spatially-explicit agent-based modelling framework for predicting the long-term transmission dynamics of lymphatic filariasis in American Samoa. Epidemics. 2019;27:19-27. Epub 2019/01/07. doi: 10.1016/j.epidem.2018.12.003. PubMed PMID: 30611745.

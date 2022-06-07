@@ -1,0 +1,14 @@
+name: GEOFILAmSamMDA
+title: GEOFILAmSamMDA
+username:
+account: angusmclure
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2327573
+bundleId: 5984475
+url: https://angusmclure.shinyapps.io/GEOFILAmSamMDA/
+when: 1654583716.87645
+lastSyncTime: 1654583716.87647
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData|SimPrevMeans.csv|TopUpSimNums.csv

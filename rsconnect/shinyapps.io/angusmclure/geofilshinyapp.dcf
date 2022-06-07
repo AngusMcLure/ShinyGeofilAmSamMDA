@@ -1,0 +1,13 @@
+name: GEOFILShinyApp
+title: GEOFILShinyApp
+username:
+account: angusmclure
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1149854
+bundleId: 3088681
+url: https://angusmclure.shinyapps.io/geofilshinyapp/
+when: 1588303527.52713
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: AltRun.csv|GenderlessSims.csv|PreprocessSimOutputs.R|prv_dat16_segfault.csv|Test.csv
